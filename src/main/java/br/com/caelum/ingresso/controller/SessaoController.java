@@ -48,7 +48,7 @@ public class SessaoController {
 		ModelAndView modelAndView = new ModelAndView("sessao/sessao");
 
 		modelAndView.addObject("sala", salaDao.findOne(salaId));
-		modelAndView.addObject("carrinho", carrinho);
+		
 		modelAndView.addObject("filmes", filmeDao.findAll());
 		modelAndView.addObject("form", form);
 
@@ -85,6 +85,7 @@ public class SessaoController {
 
 		modelAndView.addObject("sessao", sessao);
 		modelAndView.addObject("imagemCapa", imagemCapa.orElse(new ImagemCapa()));
+		modelAndView.addObject("carrinho", carrinho);
 		modelAndView.addObject("tiposDeIngressos", TipoDeIngresso.values());
 
 		return modelAndView;
